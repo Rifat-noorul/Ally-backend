@@ -1,5 +1,5 @@
 import os
-from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import asyncio
@@ -103,10 +103,7 @@ async def register_user(user: UserRegister):
             "id": new_id,
             "full_name": user.full_name,
             "phone_number": user.phone_number,
-            # we need a column for hashed_password in the users table, but the schema doesn't have it.
-            # let's just add it dynamically or store it in a metadata column.
-            # Actually, to prevent breaking the schema, let's assume the schema was updated or we just do a mock.
-            # wait, if the schema fails, it will throw. We should alter the table.
+            "hashed_password": hashed_password
         }).execute()
         
         return {"status": "success", "message": "User registered successfully", "user_id": new_id}
