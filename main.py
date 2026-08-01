@@ -17,7 +17,7 @@ import uuid
 load_dotenv()
 
 SUPABASE_URL = "https://kbnblsoyxxczbkjqatlw.supabase.co"
-SUPABASE_KEY = "sb_publishable_s1se" + "TreDKjjV4cKHZicUPQ_-TpXKt6j"
+SUPABASE_KEY = "sb_secret_qLpb_" + "rJG4qYnPewPjJhcmw_uiKO6Rg8"
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
