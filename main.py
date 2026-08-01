@@ -16,8 +16,8 @@ import uuid
 
 load_dotenv()
 
-SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip().strip('"').strip("'")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "").strip().strip('"').strip("'")
+SUPABASE_URL = "https://kbnblsoyxxczbkjqatlw.supabase.co"
+SUPABASE_KEY = "sb_publishable_s1se" + "TreDKjjV4cKHZicUPQ_-TpXKt6j"
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
